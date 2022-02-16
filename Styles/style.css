@@ -1,0 +1,15 @@
+* {
+    border: 1px solid blue;
+}
+
+body {
+    margin: 0;
+    width: 70rem;
+    height: 40rem;
+}
+
+.background {
+    width: 70rem;
+    height: 40rem;
+}
+
