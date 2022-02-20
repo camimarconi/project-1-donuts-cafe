@@ -116,43 +116,36 @@ const optionsDonuts = [
   }
 ];
 
-const clickOptions = {
-  blueSprinkleBottle: 'blueSprinkleBottle',
-  whiteSprinkleBottle: 'whiteSprinkleBottle',
-  yellowSprinkleBottle: 'yellowSprinkleBottle',
-  pinkSprinkleBottle: 'pinkSprinkleBottle',
-  coverBtnBrown: 'coverBtnBrown',
-  coverBtnGreen: 'coverBtnGreen',
-  coverBtnViolet: 'coverBtnViolet',
-  coverBtnPink:'coverBtnPink'
-};
 
 class Game {
     constructor() {
-      this.donutCardRandom = this.pickCardDonutsToMake();
-      this.points = '';
+      this.currentDonut = '';
+      this.points = 0;
+      this.totalRounds = 5;
+      this.currentRound = 0;
       this.gameOver = false;
-    }
+      this.pickCardDonutsToMake();
+    };
 
     //carta random para ter o donuts que precisa montar
-    pickCardDonutsToMake(){
+    pickCardDonutsToMake() {
+
       let numRandom = Math.floor(Math.random() * optionsDonuts.length);
       
-      return optionsDonuts[numRandom];
-    }
+      this.currentDonut = optionsDonuts[numRandom];
+    };
 
-}
+    newGame() {
+      this.points = 0;
+      this.currentRound = 0;
+    };
+
+};
 
 class User {
   constructor() {
     this.userCurrentSelection = '';
     this.userCover = 'none';
     this.userSprinkle = 'none';
-    this.currentSprinkle = '';
-    this.currentCover = '';
-  }
-
-  userSelecting(selection) {
-    this.userCurrentSelection = clickOptions[selection];
-  }
-}
+  };
+};

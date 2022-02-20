@@ -1,9 +1,3 @@
-// . um jogador
-//. jogador vê a carta e monta donut
-// . se acerta, ganha ponto
-// . se erra, perde ponto
-// . ganha quando somar 5 pontos
-// . Contabilizar quantidade de vitórias e tirar a de erros
 
 // criar minhas constantes conectadas no html
 //spk bottles
@@ -63,131 +57,284 @@ const pointsElement = document.querySelector('.points');
 
 const baseDonut = document.querySelector('.donutBase');
 
+const gamepointsElement = document.querySelector('.points');
+
+const rightSymbol = document.querySelector('.right');
+const wrongSymbol = document.querySelector('.wrong');
+const winnerImg = document.querySelector('.winner');
+
 
 let game = new Game();
 let user = new User();
-
-
-
-function userMakingDonut(clickOption) {
-
-// user.userSelecting(clickOption);
-// console.log(toppingTargetElement);
-// console.log(toppingTargetElement);
-
-//possibilidades de cover
-  if(clickOption.alt === 'cover-btn-pink'){
-    baseDonut.style.display = 'none';
-    coverPinkImg.style.display = 'block';
-    return;
-  };
-
-
-// falta if do brown cover
-
-//   if(clickOption.alt === 'cover-btn-pink'){
-//     baseDonut.style.display = 'none';
-//     coverPinkImg.style.display = 'block';
-//     return;
-//   };
-
-//   if(clickOption.alt === 'cover-btn-green'){
-//     baseDonut.style.display = 'none';
-//     coverGreenImg.style.display = 'block';
-//     return;
-//   };
-
-//   if(clickOption.alt === 'cover-btn-violet'){
-//     baseDonut.style.display = 'none';
-//     coverVioletImg.style.display = 'block';
-//     return;
-//   };
-
-
-// //possibilidade de sprinkle
-//   if(clickOption.alt === 'blue-sprinkle-bottle'){
-//     baseDonut.style.display = 'none';
-//     donutBaseBlueSpk.style.display = 'block';
-//     return;
-//   };
-
-//   if(clickOption.alt === 'blue-sprinkle-bottle'){
-//     baseDonut.style.display = 'none';
-//     donutBaseBlueSpk.style.display = 'block';
-//     return;
-//   };
-
-
-
 
 
 //EXEMPLO QUE DEU CERTO DE UM POR UM:
 // function userMakingDonut(clickOption) {
 //   user.userSelecting(clickOption);
 
-//   if(user.userCurrentSelection === 'sprinkleBottleBlueImg'){
+//   if(user.userCurrentSelection === 'blueSprinkleBottle'){
 //     baseDonut.style.display = 'none';
 //     donutBaseBlueSpk.style.display = 'block';
 //     return;
 //   };
 
 
-
-
-
-}
-
-//CHECAR SE FUNCIONA!! AINDA NÃO FIZ CONSOLE LOG  
-function checkDonutUserAndRandom (){
-  //aqui estou checando se as imgs são as mesmas e pontuação +/- 
-  // currentCard vai existir neste escopo?
-    if (currentCard.sprinkle === game.userSprinkle && currentCard.cover === game.userCover){
-      game.points++
-    }else{
-      game.points--
-    }
+function hideDonuts(){
+  document.querySelectorAll('.donuts').forEach(donut => {
+    donut.style.display = 'none';
+  });
+  console.log('hide')
 };
 
- 
+function checkDonutUserAndRandom (){
+    if (game.currentDonut.sprinkle === user.userSprinkle && game.currentDonut.cover === user.userCover){
+      hideDonuts();
+      rightSymbol.style.display = 'block';
+      game.points++
+
+    }else{
+      hideDonuts();
+      wrongSymbol.style.display = 'block';
+    }
+
+    // console.log(game);
+    // console.log(user);
+
+    updateUserPoints();
+};
+
+
+function updateUserPoints() {
+  gamepointsElement.innerText = `${game.points}`;
+};
+
+
+function showCard() {
+  hideDonuts();
+
+  let currentDonut = document.querySelector(game.currentDonut.class);
+
+  currentDonut.style.display = 'block';
+
+  setTimeout(() => {currentDonut.style.display = 'none'}, 2000);
+};
+
+
+function plusOneRound(){
+  game.currentRound++
+
+  if(game.currentRound === 5){
+    winner();
+  }
+};
+
+
+function winner(){
+  //mostrar uma imagem de ganhou!? pensando ainda.
+};
+
+
 //event listerners
 
 btnNewOrder.addEventListener('click', function () {
-
-  let currentCard = document.querySelector(game.donutCardRandom.class);
-
-  currentCard.style.display = 'block';
-
-  setTimeout(() => {currentCard.style.display = 'none'}, 3000);
+  game.pickCardDonutsToMake();
+  showCard();
+  
 // console.log(game);
 // console.log(document.querySelector(game.donutCardRandom.class));
 });
 
-btnBaseDonut.addEventListener('click', function(){  
+btnBaseDonut.addEventListener('click', function(){
   baseDonut.style.display = 'block';
 });
 
 
 //escutar na página toda o clique
-document.addEventListener('click', (event) => {
+window.document.addEventListener('click', (event) => {
+ 
   const toppingTargetElement = event.target;
-  console.log(toppingTargetElement);
+  // console.log(toppingTargetElement);
 
-  if (toppingTargetElement.classList.contains('topping')){
-   userMakingDonut(toppingTargetElement);
-  };
+  //COVER POSSIBILITIES
+  if (toppingTargetElement.classList.contains('cover')){
+    hideDonuts();    
+
+    if(toppingTargetElement.classList.contains('cover-btn-brown')){
+      baseDonut.style.display = 'none';
+      coverBrownImg.style.display = 'block';
+      user.userCover = 'brown';
+      user.userSprinkle = 'none';
+    }
+
+    if(toppingTargetElement.classList.contains('cover-btn-pink')){
+      baseDonut.style.display = 'none';
+      coverPinkImg.style.display = 'block';
+      user.userCover = 'pink';
+      user.userSprinkle = 'none';
+    }
+
+    if(toppingTargetElement.classList.contains('cover-btn-green')){
+      baseDonut.style.display = 'none';
+      coverGreenImg.style.display = 'block';
+      user.userCover = 'green';
+      user.userSprinkle = 'none';
+    }
+
+    if(toppingTargetElement.classList.contains('cover-btn-violet')){
+      baseDonut.style.display = 'none';
+      coverVioletImg.style.display = 'block';
+      user.userCover = 'violet';
+      user.userSprinkle = 'none';
+    }
+  }
+
+    //SPRINKLES POSSIBILITIES
+    //BLUE SPRINLE POSSIBILITIES
+    if(toppingTargetElement.classList.contains('sprinkle-bottle-blue')){
+      
+      //USUÁRIO NÃO CONSEGUE ALTERAR O SPRINKLE
+
+
+      if(coverBrownImg.style.display == 'block'){
+        coverBrownImg.style.display = 'none';
+        coverBrownBlueSprinkleImg.style.display = 'block';
+        user.userCover = 'brown';
+        user.userSprinkle = 'blue';        
+      
+      }else if(coverPinkImg.style.display == 'block'){
+        coverPinkImg.style.display = 'none';
+        coverPinkBlueSprinkleImg.style.display = 'block';
+        user.userCover = 'pink';
+        user.userSprinkle = 'blue';
+    
+      }else if(coverGreenImg.style.display == 'block'){
+        coverGreenImg.style.display = 'none';
+        coverGreenBlueSprinkleImg.style.display = 'block';
+        user.userCover = 'green';
+        user.userSprinkle = 'blue';
+        
+      }else if(coverVioletImg.style.display == 'block'){
+        coverVioletImg.style.display = 'none';
+        coverVioletBlueSprinkleImg.style.display = 'block';
+        user.userCover = 'violet';
+        user.userSprinkle = 'blue';
+
+      }
+    }
+
+    //PINK SPRINKLE POSSIBILITIES
+    if(toppingTargetElement.classList.contains('sprinkle-bottle-pink')){
+      if(coverBrownImg.style.display == 'block'){
+        coverBrownImg.style.display = 'none';
+        coverBrownPinkSprinkleImg.style.display = 'block';
+        user.userCover = 'brown';
+        user.userSprinkle = 'pink';
+      }
+
+      if(coverPinkImg.style.display == 'block'){
+        coverPinkImg.style.display = 'none';
+        coverPinkPinkSprinkleImg.style.display = 'block';
+        user.userCover = 'pink';
+        user.userSprinkle = 'pink';
+      }
+
+      if(coverGreenImg.style.display == 'block'){
+        coverGreenImg.style.display = 'none';
+        coverGreenPinkSprinkleImg.style.display = 'block';
+        user.userCover = 'green';
+        user.userSprinkle = 'pink';
+      }
+
+      if(coverVioletImg.style.display == 'block'){
+        coverVioletImg.style.display = 'none';
+        coverVioletPinkSprinkleImg.style.display = 'block';
+        user.userCover = 'violet';
+        user.userSprinkle = 'pink';
+      }
+    }
+
+    //WHITE SPRINKLE POSSIBILITIES
+    if(toppingTargetElement.classList.contains('sprinkle-bottle-white')){
+
+      if(coverBrownImg.style.display == 'block'){
+        coverBrownImg.style.display = 'none';
+        coverBrownWhiteSprinkleImg.style.display = 'block';
+        user.userCover = 'brown';
+        user.userSprinkle = 'white';
+      }
+
+      if(coverPinkImg.style.display == 'block'){
+        coverPinkImg.style.display = 'none';
+        coverPinkWhiteSprinkleImg.style.display = 'block';
+        user.userCover = 'pink';
+        user.userSprinkle = 'white';
+      }
+
+      if(coverGreenImg.style.display == 'block'){
+        coverGreenImg.style.display = 'none';
+        coverGreenWhiteSprinkleImg.style.display = 'block';
+        user.userCover = 'green';
+        user.userSprinkle = 'white';
+      }
+
+      if(coverVioletImg.style.display == 'block'){
+        coverVioletImg.style.display = 'none';
+        coverVioletWhiteSprinkleImg.style.display = 'block';
+        user.userCover = 'violet';
+        user.userSprinkle = 'white';
+      }
+    }
+
+    //YELLOW SPRNKLE POSSIBILITIES
+    if(toppingTargetElement.classList.contains('sprinkle-bottle-yellow')){
+
+      if(coverBrownImg.style.display == 'block'){
+        coverBrownImg.style.display = 'none';
+        coverBrownYellowSprinkleImg.style.display = 'block';
+        user.userCover = 'brown';
+        user.userSprinkle = 'yellow';
+      }
+
+      if(coverPinkImg.style.display == 'block'){
+        coverPinkImg.style.display = 'none';
+        coverPinkYellowSprinkleImg.style.display = 'block';
+        user.userCover = 'pink';
+        user.userSprinkle = 'yellow';
+      };
+
+      if(coverGreenImg.style.display == 'block'){
+        coverGreenImg.style.display = 'none';
+        coverGreenYellowSprinkleImg.style.display = 'block';
+        user.userCover = 'green';
+        user.userSprinkle = 'yellow';
+      };
+
+      if(coverVioletImg.style.display == 'block'){
+        coverVioletImg.style.display = 'none';
+        coverVioletYellowSprinkleImg.style.display = 'block';
+        user.userCover = 'violet';
+        user.userSprinkle = 'yellow';
+      };
+    };
+
 });
 
 
-// escuto um por um o click no botão
+
+// escuto um por um o click no botão - exemplo que deu certo - um por um
 // sprinkleBottleBlueImg.addEventListener('click', function() {
 //   userMakingDonut('sprinkleBottleBlueImg'); 
 //   // console.log('ola');
 // });
 
 
-
-
 btnDeliver.addEventListener('click', function () {
-  
-  
+  checkDonutUserAndRandom();
+  plusOneRound();
+});
+
+
+btnNewGame.addEventListener('click', function(){
+  game.newGame();
+  document.location.reload(true); // Recarrega a página atual sem usar o cache
 });

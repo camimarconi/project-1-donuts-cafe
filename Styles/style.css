@@ -63,3 +63,13 @@ header {
 .donuts{
   display: none;
 }
+
+.right{
+  width: 50%;
+  height: 50%;
+}
+
+.wrong{
+  width: 50%;
+  height: 50%;
+}
