@@ -8,21 +8,18 @@ body {
     width: 90vw;
     height: 70vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 header {
-    position: fixed;
     top: 0;
     width: auto;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     font-size: larger;
     font-weight: 800;
     font-style: oblique;
-    color: #fff;
+    color: black;
   }
 
   .background {
@@ -30,28 +27,39 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100vw;
+    width: 90vw;
     max-width: 100%;
-    height: calc(100vh - 60px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-  }
-
-  .donutsCard{
+    height: calc(90vh - 60px);
     display: flex;
     flex-direction: row;
-    justify-content: ;
-
-
-
+    justify-content: space-between;
   }
 
-  .makeDonuts{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.sprinkles-choices{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: flex-end;
+  margin-bottom: 12rem;
+  padding: 0 0;
 
-  }
+}
+
+.sprinkle-bottle{
+  width: 80%;
+  height: auto;
+}
+
+.cover-choices{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: flex-end;
+  margin-bottom: 12rem;
+  padding: 0 0;
+  width: 200px;
+}
+
+.donuts{
+  display: none;
+}
