@@ -123,8 +123,7 @@ class Game {
       this.points = 0;
       this.totalRounds = 5;
       this.currentRound = 0;
-      this.gameOver = false;
-      this.pickCardDonutsToMake();
+      // this.gameOver = false; //verificar se uso ou não - usar se tiver de perder
     };
 
     //carta random para ter o donuts que precisa montar
@@ -135,16 +134,11 @@ class Game {
       this.currentDonut = optionsDonuts[numRandom];
     };
 
-    newGame() {
-      this.points = 0;
-      this.currentRound = 0;
-    };
 
 };
 
 class User {
   constructor() {
-    this.userCurrentSelection = '';
     this.userCover = 'none';
     this.userSprinkle = 'none';
   };

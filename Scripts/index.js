@@ -11,6 +11,7 @@ const btnCoverGreenBottle = document.querySelector('.cover-btn-green');
 const btnCoverBrownnBottle = document.querySelector('.cover-btn-brown');
 const btnCoverVioletnBottle = document.querySelector('.cover-btn-violet');
 const btnCoverPinknBottle = document.querySelector('.cover-btn-pink');
+const btnCoverNoneBottle = document.querySelector('.cover-btn-none');
 
 //no cover possobilities
 const donutBaseBlueSpk = document.querySelector('.donutBase-blue-spk');
@@ -83,8 +84,13 @@ function hideDonuts(){
   document.querySelectorAll('.donuts').forEach(donut => {
     donut.style.display = 'none';
   });
-  console.log('hide')
 };
+
+// function hideDonutsWithCover(){
+//   document.querySelectorAll('.donuts-only-cover').forEach(donut => {
+//     donut.style.display = 'none';
+//   });
+// };
 
 function checkDonutUserAndRandom (){
     if (game.currentDonut.sprinkle === user.userSprinkle && game.currentDonut.cover === user.userCover){
@@ -124,13 +130,15 @@ function plusOneRound(){
   game.currentRound++
 
   if(game.currentRound === 5){
+    game.currentRound++
     winner();
   }
 };
 
 
 function winner(){
-  //mostrar uma imagem de ganhou!? pensando ainda.
+  hideDonuts();
+  winnerImg.style.display = 'block';   
 };
 
 
@@ -157,7 +165,8 @@ window.document.addEventListener('click', (event) => {
 
   //COVER POSSIBILITIES
   if (toppingTargetElement.classList.contains('cover')){
-    hideDonuts();    
+
+    hideDonuts();
 
     if(toppingTargetElement.classList.contains('cover-btn-brown')){
       baseDonut.style.display = 'none';
@@ -165,65 +174,79 @@ window.document.addEventListener('click', (event) => {
       user.userCover = 'brown';
       user.userSprinkle = 'none';
     }
-
     if(toppingTargetElement.classList.contains('cover-btn-pink')){
       baseDonut.style.display = 'none';
       coverPinkImg.style.display = 'block';
       user.userCover = 'pink';
       user.userSprinkle = 'none';
     }
-
     if(toppingTargetElement.classList.contains('cover-btn-green')){
       baseDonut.style.display = 'none';
       coverGreenImg.style.display = 'block';
       user.userCover = 'green';
       user.userSprinkle = 'none';
     }
-
     if(toppingTargetElement.classList.contains('cover-btn-violet')){
       baseDonut.style.display = 'none';
       coverVioletImg.style.display = 'block';
       user.userCover = 'violet';
       user.userSprinkle = 'none';
     }
+    if(toppingTargetElement.classList.contains('cover-btn-none')){
+      baseDonut.style.display = 'block';
+      user.userCover = 'none';
+      user.userSprinkle = 'none';
+    }
   }
-
     //SPRINKLES POSSIBILITIES
     //BLUE SPRINLE POSSIBILITIES
     if(toppingTargetElement.classList.contains('sprinkle-bottle-blue')){
+      // hideDonutsWithCover();
+      if(baseDonut.style.display == 'block'){
+        baseDonut.style.display = 'none';
+        donutBaseBlueSpk.style.display = 'block';
+        user.userCover = 'none';
+        user.userSprinkle = 'blue';
+      }
       
-      //USUÁRIO NÃO CONSEGUE ALTERAR O SPRINKLE
-
-
       if(coverBrownImg.style.display == 'block'){
         coverBrownImg.style.display = 'none';
         coverBrownBlueSprinkleImg.style.display = 'block';
         user.userCover = 'brown';
-        user.userSprinkle = 'blue';        
+        user.userSprinkle = 'blue';
+      }
       
-      }else if(coverPinkImg.style.display == 'block'){
+      if(coverPinkImg.style.display == 'block'){
         coverPinkImg.style.display = 'none';
         coverPinkBlueSprinkleImg.style.display = 'block';
         user.userCover = 'pink';
         user.userSprinkle = 'blue';
-    
-      }else if(coverGreenImg.style.display == 'block'){
+      }
+        if(coverGreenImg.style.display == 'block'){
         coverGreenImg.style.display = 'none';
         coverGreenBlueSprinkleImg.style.display = 'block';
         user.userCover = 'green';
         user.userSprinkle = 'blue';
-        
-      }else if(coverVioletImg.style.display == 'block'){
+      }
+      
+      if(coverVioletImg.style.display == 'block'){
         coverVioletImg.style.display = 'none';
         coverVioletBlueSprinkleImg.style.display = 'block';
         user.userCover = 'violet';
         user.userSprinkle = 'blue';
-
       }
     }
-
     //PINK SPRINKLE POSSIBILITIES
     if(toppingTargetElement.classList.contains('sprinkle-bottle-pink')){
+      // hideDonutsWithCover()
+      
+      if(baseDonut.style.display == 'block'){
+        baseDonut.style.display = 'none';
+        donutBasePinkSpk.style.display = 'block';
+        user.userCover = 'none';
+        user.userSprinkle = 'pink';
+      }
+
       if(coverBrownImg.style.display == 'block'){
         coverBrownImg.style.display = 'none';
         coverBrownPinkSprinkleImg.style.display = 'block';
@@ -255,6 +278,14 @@ window.document.addEventListener('click', (event) => {
 
     //WHITE SPRINKLE POSSIBILITIES
     if(toppingTargetElement.classList.contains('sprinkle-bottle-white')){
+      // hideDonutsWithCover();
+
+      if(baseDonut.style.display == 'block'){
+        baseDonut.style.display = 'none';
+        donutBaseWhiteSpk.style.display = 'block';
+        user.userCover = 'none';
+        user.userSprinkle = 'white';
+      }
 
       if(coverBrownImg.style.display == 'block'){
         coverBrownImg.style.display = 'none';
@@ -287,6 +318,13 @@ window.document.addEventListener('click', (event) => {
 
     //YELLOW SPRNKLE POSSIBILITIES
     if(toppingTargetElement.classList.contains('sprinkle-bottle-yellow')){
+      // hideDonutsWithCover();
+      if(baseDonut.style.display == 'block'){
+        baseDonut.style.display = 'none';
+        donutBaseYellowSpk.style.display = 'block';
+        user.userCover = 'none';
+        user.userSprinkle = 'yellow';
+      }
 
       if(coverBrownImg.style.display == 'block'){
         coverBrownImg.style.display = 'none';
@@ -300,23 +338,22 @@ window.document.addEventListener('click', (event) => {
         coverPinkYellowSprinkleImg.style.display = 'block';
         user.userCover = 'pink';
         user.userSprinkle = 'yellow';
-      };
+      }
 
       if(coverGreenImg.style.display == 'block'){
         coverGreenImg.style.display = 'none';
         coverGreenYellowSprinkleImg.style.display = 'block';
         user.userCover = 'green';
         user.userSprinkle = 'yellow';
-      };
+      }
 
       if(coverVioletImg.style.display == 'block'){
         coverVioletImg.style.display = 'none';
         coverVioletYellowSprinkleImg.style.display = 'block';
         user.userCover = 'violet';
         user.userSprinkle = 'yellow';
-      };
-    };
-
+      }
+    }
 });
 
 
@@ -335,6 +372,5 @@ btnDeliver.addEventListener('click', function () {
 
 
 btnNewGame.addEventListener('click', function(){
-  game.newGame();
   document.location.reload(true); // Recarrega a página atual sem usar o cache
 });
