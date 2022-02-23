@@ -15,10 +15,10 @@ const btnCoverNoneBottle = document.querySelector('.cover-btn-none');
 
 //no cover possobilities
 const donutBaseBlueSpk = document.querySelector('.donutBase-blue-spk');
+
 const donutBasePinkSpk = document.querySelector('.donutBase-pink-spk');
 const donutBaseWhiteSpk = document.querySelector('.donutBase-white-spk');
 const donutBaseYellowSpk = document.querySelector('.donutBase-yellow-spk');
-
 //green possibilities
 const coverGreenImg = document.querySelector('.donuts-green-cover');
 const coverGreenBlueSprinkleImg = document.querySelector('.donuts-green-blue-sprinkle');
@@ -64,6 +64,10 @@ const rightSymbol = document.querySelector('.right');
 const wrongSymbol = document.querySelector('.wrong');
 const winnerImg = document.querySelector('.winner');
 
+// const music = document.querySelector('.audio');
+// music.play();
+// music.loop = true;
+// music.volume = 0.3;
 
 let game = new Game();
 let user = new User();
@@ -86,11 +90,6 @@ function hideDonuts(){
   });
 };
 
-// function hideDonutsWithCover(){
-//   document.querySelectorAll('.donuts-only-cover').forEach(donut => {
-//     donut.style.display = 'none';
-//   });
-// };
 
 function checkDonutUserAndRandom (){
     if (game.currentDonut.sprinkle === user.userSprinkle && game.currentDonut.cover === user.userCover){
@@ -129,8 +128,7 @@ function showCard() {
 function plusOneRound(){
   game.currentRound++
 
-  if(game.currentRound === 5){
-    game.currentRound++
+  if(game.points === 2){
     winner();
   }
 };
@@ -144,12 +142,9 @@ function winner(){
 
 //event listerners
 
-btnNewOrder.addEventListener('click', function () {
+btnNewOrder.addEventListener('click', function() {
   game.pickCardDonutsToMake();
   showCard();
-  
-// console.log(game);
-// console.log(document.querySelector(game.donutCardRandom.class));
 });
 
 btnBaseDonut.addEventListener('click', function(){
@@ -157,204 +152,204 @@ btnBaseDonut.addEventListener('click', function(){
 });
 
 
-//escutar na página toda o clique
-window.document.addEventListener('click', (event) => {
- 
-  const toppingTargetElement = event.target;
-  // console.log(toppingTargetElement);
-
-  //COVER POSSIBILITIES
-  if (toppingTargetElement.classList.contains('cover')){
-
-    hideDonuts();
-
-    if(toppingTargetElement.classList.contains('cover-btn-brown')){
-      baseDonut.style.display = 'none';
-      coverBrownImg.style.display = 'block';
-      user.userCover = 'brown';
-      user.userSprinkle = 'none';
-    }
-    if(toppingTargetElement.classList.contains('cover-btn-pink')){
-      baseDonut.style.display = 'none';
-      coverPinkImg.style.display = 'block';
-      user.userCover = 'pink';
-      user.userSprinkle = 'none';
-    }
-    if(toppingTargetElement.classList.contains('cover-btn-green')){
-      baseDonut.style.display = 'none';
-      coverGreenImg.style.display = 'block';
-      user.userCover = 'green';
-      user.userSprinkle = 'none';
-    }
-    if(toppingTargetElement.classList.contains('cover-btn-violet')){
-      baseDonut.style.display = 'none';
-      coverVioletImg.style.display = 'block';
-      user.userCover = 'violet';
-      user.userSprinkle = 'none';
-    }
-    if(toppingTargetElement.classList.contains('cover-btn-none')){
-      baseDonut.style.display = 'block';
-      user.userCover = 'none';
-      user.userSprinkle = 'none';
-    }
-  }
-    //SPRINKLES POSSIBILITIES
-    //BLUE SPRINLE POSSIBILITIES
-    if(toppingTargetElement.classList.contains('sprinkle-bottle-blue')){
-      // hideDonutsWithCover();
-      if(baseDonut.style.display == 'block'){
-        baseDonut.style.display = 'none';
-        donutBaseBlueSpk.style.display = 'block';
-        user.userCover = 'none';
-        user.userSprinkle = 'blue';
-      }
-      
-      if(coverBrownImg.style.display == 'block'){
-        coverBrownImg.style.display = 'none';
-        coverBrownBlueSprinkleImg.style.display = 'block';
-        user.userCover = 'brown';
-        user.userSprinkle = 'blue';
-      }
-      
-      if(coverPinkImg.style.display == 'block'){
-        coverPinkImg.style.display = 'none';
-        coverPinkBlueSprinkleImg.style.display = 'block';
-        user.userCover = 'pink';
-        user.userSprinkle = 'blue';
-      }
-        if(coverGreenImg.style.display == 'block'){
-        coverGreenImg.style.display = 'none';
-        coverGreenBlueSprinkleImg.style.display = 'block';
-        user.userCover = 'green';
-        user.userSprinkle = 'blue';
-      }
-      
-      if(coverVioletImg.style.display == 'block'){
-        coverVioletImg.style.display = 'none';
-        coverVioletBlueSprinkleImg.style.display = 'block';
-        user.userCover = 'violet';
-        user.userSprinkle = 'blue';
-      }
-    }
-    //PINK SPRINKLE POSSIBILITIES
-    if(toppingTargetElement.classList.contains('sprinkle-bottle-pink')){
-      // hideDonutsWithCover()
-      
-      if(baseDonut.style.display == 'block'){
-        baseDonut.style.display = 'none';
-        donutBasePinkSpk.style.display = 'block';
-        user.userCover = 'none';
-        user.userSprinkle = 'pink';
-      }
-
-      if(coverBrownImg.style.display == 'block'){
-        coverBrownImg.style.display = 'none';
-        coverBrownPinkSprinkleImg.style.display = 'block';
-        user.userCover = 'brown';
-        user.userSprinkle = 'pink';
-      }
-
-      if(coverPinkImg.style.display == 'block'){
-        coverPinkImg.style.display = 'none';
-        coverPinkPinkSprinkleImg.style.display = 'block';
-        user.userCover = 'pink';
-        user.userSprinkle = 'pink';
-      }
-
-      if(coverGreenImg.style.display == 'block'){
-        coverGreenImg.style.display = 'none';
-        coverGreenPinkSprinkleImg.style.display = 'block';
-        user.userCover = 'green';
-        user.userSprinkle = 'pink';
-      }
-
-      if(coverVioletImg.style.display == 'block'){
-        coverVioletImg.style.display = 'none';
-        coverVioletPinkSprinkleImg.style.display = 'block';
-        user.userCover = 'violet';
-        user.userSprinkle = 'pink';
-      }
-    }
-
-    //WHITE SPRINKLE POSSIBILITIES
-    if(toppingTargetElement.classList.contains('sprinkle-bottle-white')){
-      // hideDonutsWithCover();
-
-      if(baseDonut.style.display == 'block'){
-        baseDonut.style.display = 'none';
-        donutBaseWhiteSpk.style.display = 'block';
-        user.userCover = 'none';
-        user.userSprinkle = 'white';
-      }
-
-      if(coverBrownImg.style.display == 'block'){
-        coverBrownImg.style.display = 'none';
-        coverBrownWhiteSprinkleImg.style.display = 'block';
-        user.userCover = 'brown';
-        user.userSprinkle = 'white';
-      }
-
-      if(coverPinkImg.style.display == 'block'){
-        coverPinkImg.style.display = 'none';
-        coverPinkWhiteSprinkleImg.style.display = 'block';
-        user.userCover = 'pink';
-        user.userSprinkle = 'white';
-      }
-
-      if(coverGreenImg.style.display == 'block'){
-        coverGreenImg.style.display = 'none';
-        coverGreenWhiteSprinkleImg.style.display = 'block';
-        user.userCover = 'green';
-        user.userSprinkle = 'white';
-      }
-
-      if(coverVioletImg.style.display == 'block'){
-        coverVioletImg.style.display = 'none';
-        coverVioletWhiteSprinkleImg.style.display = 'block';
-        user.userCover = 'violet';
-        user.userSprinkle = 'white';
-      }
-    }
-
-    //YELLOW SPRNKLE POSSIBILITIES
-    if(toppingTargetElement.classList.contains('sprinkle-bottle-yellow')){
-      // hideDonutsWithCover();
-      if(baseDonut.style.display == 'block'){
-        baseDonut.style.display = 'none';
-        donutBaseYellowSpk.style.display = 'block';
-        user.userCover = 'none';
-        user.userSprinkle = 'yellow';
-      }
-
-      if(coverBrownImg.style.display == 'block'){
-        coverBrownImg.style.display = 'none';
-        coverBrownYellowSprinkleImg.style.display = 'block';
-        user.userCover = 'brown';
-        user.userSprinkle = 'yellow';
-      }
-
-      if(coverPinkImg.style.display == 'block'){
-        coverPinkImg.style.display = 'none';
-        coverPinkYellowSprinkleImg.style.display = 'block';
-        user.userCover = 'pink';
-        user.userSprinkle = 'yellow';
-      }
-
-      if(coverGreenImg.style.display == 'block'){
-        coverGreenImg.style.display = 'none';
-        coverGreenYellowSprinkleImg.style.display = 'block';
-        user.userCover = 'green';
-        user.userSprinkle = 'yellow';
-      }
-
-      if(coverVioletImg.style.display == 'block'){
-        coverVioletImg.style.display = 'none';
-        coverVioletYellowSprinkleImg.style.display = 'block';
-        user.userCover = 'violet';
-        user.userSprinkle = 'yellow';
-      }
-    }
+btnCoverGreenBottle.addEventListener('click', function() {
+  hideDonuts();
+  coverGreenImg.style.display = 'block';
+  user.userCover = 'green';
+  user.userSprinkle = 'none';
 });
+
+btnCoverBrownnBottle.addEventListener('click', function() {
+  hideDonuts();
+  coverBrownImg.style.display = 'block';
+  user.userCover = 'brown';
+  user.userSprinkle = 'none';
+});
+
+btnCoverVioletnBottle.addEventListener('click', function() {
+  hideDonuts();
+  coverVioletImg.style.display = 'block';
+  user.userCover = 'violet';
+  user.userSprinkle = 'none';
+});
+
+btnCoverPinknBottle.addEventListener('click', function() {
+  hideDonuts();
+  coverPinkImg.style.display = 'block';
+  user.userCover = 'pink';
+  user.userSprinkle = 'none';
+});
+
+btnCoverNoneBottle.addEventListener('click', function() {
+  hideDonuts();
+  baseDonut.style.display = 'block';
+  user.userCover = 'none';
+  user.userSprinkle = 'none';
+});
+
+//SPRINKLES POSSIBILITIES
+//BLUE SPRINLE POSSIBILITIES
+sprinkleBottleBlueImg.addEventListener('click', function() {
+
+  if(baseDonut.style.display == 'block'){
+    hideDonuts();
+    donutBaseBlueSpk.style.display = 'block';
+    user.userCover = 'none';
+    user.userSprinkle = 'blue';
+  }
+  
+  if(coverBrownImg.style.display == 'block'){
+    hideDonuts();
+    coverBrownBlueSprinkleImg.style.display = 'block';
+    user.userCover = 'brown';
+    user.userSprinkle = 'blue';
+  }
+  
+  if(coverPinkImg.style.display == 'block'){
+    hideDonuts();
+    coverPinkBlueSprinkleImg.style.display = 'block';
+    user.userCover = 'pink';
+    user.userSprinkle = 'blue';
+  }
+
+    if(coverGreenImg.style.display == 'block'){
+    hideDonuts();
+    coverGreenBlueSprinkleImg.style.display = 'block';
+    user.userCover = 'green';
+    user.userSprinkle = 'blue';
+  }
+  
+  if(coverVioletImg.style.display == 'block'){
+    hideDonuts();
+    coverVioletBlueSprinkleImg.style.display = 'block';
+    user.userCover = 'violet';
+    user.userSprinkle = 'blue';
+  }
+  
+});
+
+//WHITE SPRINKLE POSSIBILITIES
+sprinkleBottleWhiteImg.addEventListener('click', function() {
+
+  if(baseDonut.style.display == 'block'){
+    hideDonuts();
+    donutBaseWhiteSpk.style.display = 'block';
+    user.userCover = 'none';
+    user.userSprinkle = 'white';
+  }
+
+  if(coverBrownImg.style.display == 'block'){
+    hideDonuts();
+    coverBrownWhiteSprinkleImg.style.display = 'block';
+    user.userCover = 'brown';
+    user.userSprinkle = 'white';
+  }
+
+  if(coverPinkImg.style.display == 'block'){
+    hideDonuts();
+    coverPinkWhiteSprinkleImg.style.display = 'block';
+    user.userCover = 'pink';
+    user.userSprinkle = 'white';
+  }
+
+  if(coverGreenImg.style.display == 'block'){
+    hideDonuts();
+    coverGreenWhiteSprinkleImg.style.display = 'block';
+    user.userCover = 'green';
+    user.userSprinkle = 'white';
+  }
+
+  if(coverVioletImg.style.display == 'block'){
+    hideDonuts();
+    coverVioletWhiteSprinkleImg.style.display = 'block';
+    user.userCover = 'violet';
+    user.userSprinkle = 'white';
+  }
+
+});
+
+//YELLOW SPRNKLE POSSIBILITIES
+sprinkleBottleYellowImg.addEventListener('click', function() {
+
+  if(baseDonut.style.display == 'block'){
+    hideDonuts();
+    donutBaseYellowSpk.style.display = 'block';
+    user.userCover = 'none';
+    user.userSprinkle = 'yellow';
+  }
+
+  if(coverBrownImg.style.display == 'block'){
+    hideDonuts();
+    coverBrownYellowSprinkleImg.style.display = 'block';
+    user.userCover = 'brown';
+    user.userSprinkle = 'yellow';
+  }
+
+  if(coverPinkImg.style.display == 'block'){
+    hideDonuts();
+    coverPinkYellowSprinkleImg.style.display = 'block';
+    user.userCover = 'pink';
+    user.userSprinkle = 'yellow';
+  }
+
+  if(coverGreenImg.style.display == 'block'){
+    hideDonuts();
+    coverGreenYellowSprinkleImg.style.display = 'block';
+    user.userCover = 'green';
+    user.userSprinkle = 'yellow';
+  }
+
+  if(coverVioletImg.style.display == 'block'){
+    hideDonuts();
+    coverVioletYellowSprinkleImg.style.display = 'block';
+    user.userCover = 'violet';
+    user.userSprinkle = 'yellow';
+  }  
+
+});
+
+//PINK SPRINKLE POSSIBILITIES
+sprinkleBottlePinkImg.addEventListener('click', function() {
+
+  if(baseDonut.style.display == 'block'){
+    hideDonuts();
+    donutBasePinkSpk.style.display = 'block';
+    user.userCover = 'none';
+    user.userSprinkle = 'pink';
+  }
+
+  if(coverBrownImg.style.display == 'block'){
+    hideDonuts();
+    coverBrownPinkSprinkleImg.style.display = 'block';
+    user.userCover = 'brown';
+    user.userSprinkle = 'pink';
+  }
+
+  if(coverPinkImg.style.display == 'block'){
+    hideDonuts();
+    coverPinkPinkSprinkleImg.style.display = 'block';
+    user.userCover = 'pink';
+    user.userSprinkle = 'pink';
+  }
+
+  if(coverGreenImg.style.display == 'block'){
+    hideDonuts();
+    coverGreenPinkSprinkleImg.style.display = 'block';
+    user.userCover = 'green';
+    user.userSprinkle = 'pink';
+  }
+
+  if(coverVioletImg.style.display == 'block'){
+    hideDonuts();
+    coverVioletPinkSprinkleImg.style.display = 'block';
+    user.userCover = 'violet';
+    user.userSprinkle = 'pink';
+  }
+
+});  
+
+
+  
 
 
 

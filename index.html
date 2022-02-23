@@ -5,51 +5,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300;700&family=Shizuru&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Shizuru&display=swap" rel="stylesheet">
+
     <title>Donuts Cafe</title>
     <link rel="stylesheet" href="./Styles/style.css" />
+    <audio class="audio" src="./Images/bensound-theelevatorbossanova.mp3"></audio>
   </head>
 
   <body>
 
-    <header class="gameName">
-        <h1>Donuts Cafe Game</h1>
+    <header>
+        <h1>Donuts Cafe</h1>
+        <p>Welcome to Donuts Cafe!</p>
+        <p> Are you ready to make some donuts?</p>
+        <ol>
+          <li>Press 'New Order'.</li>
+          <li>The customer's order will appear for only 2 seconds. Memorize the donut you need to make!</li>
+          <li>Press 'Donut Base'.</li>
+          <li>FIRSTLY choose the cover choice. And then the sprinkle choice.</li>
+          <li>Press 'Deliver to customer'.</li>
+          <li>Repeat process .-.</li>
+        </ol>
+        <p>If you get to 05 correct orders, you win!</p>
     </header>
   
       <main class="background">
 
-        <div>
-          <img class="random-donut"/>
-          <button class="new-order-btn">New Order</button>
-          <button class="deliver-btn">Deliver to Client</button>
-        </div>
+          <div class="btns-order-base-deliver">
+            <ul>
+              <li><button class="new-order-btn">New Order</button></li>
+              <li><button class="btn-base-donut">Donut Base</button></li>
+              <li><button class="deliver-btn">Deliver to custumer</button></li>
+              <li><button class="new-game-btn">New Game!</button></li>
+            </ul>
+          </div>
 
-        <div>
-          <button class="btn-base-donut">Donut Base</button>
-        </div>
 
         <div class="cover-choices">
-          <section>
-            <img class="cover-btn-brown cover topping" src="./Images/cover-brown.png" alt="brown-cover-button"/>
-          </section>
-
-          <section>
-            <img class="cover-btn-pink cover topping" src="./Images/cover-pink.png" alt="pink-cover-button"/>
-          </section>
-
-          <section>
-            <img class="cover-btn-green cover topping" src="./Images/cover-green.png" alt="green-cover-button"/>
-          </section>
-
-          <section>
-            <img class="cover-btn-violet cover topping" src="./Images/cover-violet.png" alt="violet-cover-button"/>
-          </section>
-
-          <section>
-            <img class="cover-btn-none cover topping" src="./Images/Captura de Tela 2022-02-22 às 18.52.30.png" alt="none-cover-button"/>
-          </section>
-
+          <img class="cover-btn-brown cover topping" src="./Images/cover-brown.png" alt="brown-cover-button"/>
+          <img class="cover-btn-pink cover topping" src="./Images/cover-pink.png" alt="pink-cover-button"/>
+          <img class="cover-btn-green cover topping" src="./Images/cover-green.png" alt="green-cover-button"/>
+          <img class="cover-btn-violet cover topping" src="./Images/cover-violet.png" alt="violet-cover-button"/>
+          <img class="cover-btn-none cover topping" src="./Images/no cover.png" alt="none-cover-button"/>
         </div>
-
         
 
         <div id="makeDonuts">
@@ -153,16 +158,19 @@
             <img class="donuts-pink-pink-sprinkle donuts" src="./Images/donuts-pink-pink-sprinkle.png" alt="donuts-pink-pink-sprinkle"/>
           </section>
 
-          <section>
-            <img class="right donuts" src="./Images/correct.png" alt="correct-symbol"/>
-          </section>
 
           <section>
-            <img class="wrong donuts" src="./Images/wrong.png" alt="wrong-symbol"/>
+            <img class="right donuts" src="./Images/right 2.png" alt="got-right-girl"/>
           </section>
 
+
           <section>
-            <img class="winner donuts" src="./Images/win.png" alt="winner-img"/>
+            <img class="wrong donuts" src="./Images/wrong 2.png" alt="got-wrong-girl"/>
+          </section>
+
+
+          <section>
+            <img class="winner donuts" src="./Images/win 2.png" alt="winner-img-girl"/>
           </section>
 
         </div>
@@ -187,14 +195,9 @@
         </div>
 
 
-
         <div class="point">
-          <p>Your Points</p>
+          <p >Score</p>
           <p class="points">0</p>
-        </div>
-
-        <div>
-          <button class="new-game-btn">New Game!</button>
         </div>
         
       </main>
