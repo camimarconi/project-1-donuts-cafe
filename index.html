@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300;700&family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300;700&family=Shizuru&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,30 +34,32 @@
           <li>Repeat process .-.</li>
         </ol>
         <p>If you get to 05 correct orders, you win!</p>
+
+
     </header>
   
       <main class="background">
 
-          <div class="btns-order-base-deliver">
-            <ul>
+          <div class="right-side-bar">
+
+            <ul class="btns-order-base-deliver">
               <li><button class="new-order-btn">New Order</button></li>
               <li><button class="btn-base-donut">Donut Base</button></li>
               <li><button class="deliver-btn">Deliver to custumer</button></li>
-              <li><button class="new-game-btn">New Game!</button></li>
+
+              <div class="cover-choices">
+                <img class="cover-btn-brown cover topping" src="./Images/cover-brown.png" alt="brown-cover-button"/>
+                <img class="cover-btn-pink cover topping" src="./Images/cover-pink.png" alt="pink-cover-button"/>
+                <img class="cover-btn-green cover topping" src="./Images/cover-green.png" alt="green-cover-button"/>
+                <img class="cover-btn-violet cover topping" src="./Images/cover-violet.png" alt="violet-cover-button"/>
+              </div>
+
             </ul>
           </div>
 
 
-        <div class="cover-choices">
-          <img class="cover-btn-brown cover topping" src="./Images/cover-brown.png" alt="brown-cover-button"/>
-          <img class="cover-btn-pink cover topping" src="./Images/cover-pink.png" alt="pink-cover-button"/>
-          <img class="cover-btn-green cover topping" src="./Images/cover-green.png" alt="green-cover-button"/>
-          <img class="cover-btn-violet cover topping" src="./Images/cover-violet.png" alt="violet-cover-button"/>
-          <img class="cover-btn-none cover topping" src="./Images/no cover.png" alt="none-cover-button"/>
-        </div>
         
-
-        <div id="makeDonuts">
+        <div>
           <section>
             <img class="donutBase donuts" src="./Images/donuts-base.png" alt="donuts-base"/>
           </section>
@@ -79,7 +81,7 @@
           </section>
 
           <section>
-            <img class="donuts-brown-cover donuts donuts-only-cover" src="./Images/donuts-brown-cover.png" alt="donuts-brown-cover"/>
+            <img class="donuts-brown-cover donuts" src="./Images/donuts-brown-cover.png" alt="donuts-brown-cover"/>
           </section>
 
           <section>
@@ -99,7 +101,7 @@
           </section>
 
           <section>
-            <img class="donuts-green-cover donuts donuts-only-cover" src="./Images/donuts-green-cover.png" alt="donuts-green-cover"/>
+            <img class="donuts-green-cover donuts" src="./Images/donuts-green-cover.png" alt="donuts-green-cover"/>
           </section>
 
           <section>
@@ -119,7 +121,7 @@
           </section>
 
           <section>
-            <img class="donuts-violet-cover donuts donuts-only-cover" src="./Images/donuts-violet-cover.png" alt="donuts-violet-cover"/>
+            <img class="donuts-violet-cover donuts" src="./Images/donuts-violet-cover.png" alt="donuts-violet-cover"/>
           </section>
 
           <section>
@@ -139,7 +141,7 @@
           </section>
 
           <section>
-            <img class="donuts-pink-cover donuts donuts-only-cover" src="./Images/donuts-pink-cover.png" alt="donuts-pink-cover"/>
+            <img class="donuts-pink-cover donuts" src="./Images/donuts-pink-cover.png" alt="donuts-pink-cover"/>
           </section>
 
           <section>
@@ -149,56 +151,64 @@
           <section>
             <img class="donuts-pink-white-sprinkle donuts" src="./Images/donuts-pink-white-sprinkle.png" alt="donuts-pink-white-sprinkle"/>
           </section>
-
+  
           <section>
             <img class="donuts-pink-yellow-sprinkle donuts" src="./Images/donuts-pink-yellow-sprinkle.png" alt="donuts-pink-yellow-sprinkle"/>
           </section>
-
+  
           <section>
             <img class="donuts-pink-pink-sprinkle donuts" src="./Images/donuts-pink-pink-sprinkle.png" alt="donuts-pink-pink-sprinkle"/>
           </section>
 
+          <div class="imgs-results">
 
-          <section>
-            <img class="right donuts" src="./Images/right 2.png" alt="got-right-girl"/>
-          </section>
+            <section>
+              <img class="right donuts" src="./Images/right 2.png" alt="got-right-girl"/>
+            </section>
+    
+            <section>
+              <img class="wrong donuts" src="./Images/wrong 2.png" alt="got-wrong-girl"/>
+            </section>
+    
+            <section>
+              <img class="winner donuts" src="./Images/win 2.png" alt="winner-img-girl"/>
+            </section>
 
-
-          <section>
-            <img class="wrong donuts" src="./Images/wrong 2.png" alt="got-wrong-girl"/>
-          </section>
-
-
-          <section>
-            <img class="winner donuts" src="./Images/win 2.png" alt="winner-img-girl"/>
-          </section>
-
-        </div>
-
-        <div class="sprinkles-choices">
-          <section>
-            <img class="sprinkle-bottle-blue sprinkle-bottle topping" src="./Images/blue spk.png" alt="blue-sprinkle-bottle"/>
-          </section>
-
-          <section>
-            <img class="sprinkle-bottle-pink sprinkle-bottle topping" src="./Images/pink spk.png" alt="pink-sprinkle-bottle"/>
-          </section>
-
-          <section>
-            <img class="sprinkle-bottle-white sprinkle-bottle topping" src="./Images/white spk.png" alt="white-sprinkle-bottle"/>
-          </section>
-
-          <section>
-            <img class="sprinkle-bottle-yellow sprinkle-bottle topping" src="./Images/yellow spk.png" alt="yellow-sprinkle-bottle"/>
-          </section>
+          </div>
 
         </div>
 
 
-        <div class="point">
-          <p >Score</p>
-          <p class="points">0</p>
+
+
+        <div class="left-side-bar">
+          <div class="score">
+            <p >Score</p>
+            <p class="points">0</p>
+            <button class="new-game-btn">New Game!</button>
+          </div>
+
+          <div class="sprinkles-choices">
+            <section>
+              <img class="sprinkle-bottle-blue sprinkle-bottle topping" src="./Images/blue spk.png" alt="blue-sprinkle-bottle"/>
+            </section>
+  
+            <section>
+              <img class="sprinkle-bottle-pink sprinkle-bottle topping" src="./Images/pink spk.png" alt="pink-sprinkle-bottle"/>
+            </section>
+  
+            <section>
+              <img class="sprinkle-bottle-white sprinkle-bottle topping" src="./Images/white spk.png" alt="white-sprinkle-bottle"/>
+            </section>
+  
+            <section>
+              <img class="sprinkle-bottle-yellow sprinkle-bottle topping" src="./Images/yellow spk.png" alt="yellow-sprinkle-bottle"/>
+            </section>
+  
+          </div>
         </div>
+
+        
         
       </main>
 
