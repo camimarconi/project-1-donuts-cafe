@@ -1,13 +1,12 @@
- * {
+ /* * {
   border: 1px solid blue;
-}
+} */
 
 body {
   font-family:'Chakra Petch', sans-serif;
   font-size: 1.2rem;
   margin: 0;
-  width: 97vw;
-  height: 87vh;
+  padding: 0;
   display: flex;
 }
 
@@ -18,6 +17,7 @@ header {
   align-items: center;
   width: 20vw;
   position: relative;
+  margin: 0 25px 0 10px;
 }
 
 header h1 {
@@ -38,8 +38,17 @@ header p {
 
 header ol {
   font-size: 16px;
-  align-self: center;
+  text-align: left;
   color: #49484A;
+}
+
+header li{
+  padding-top: 25px;
+  padding-left: 10px;
+}
+
+.memorize{
+  font-weight: 800;
 }
 
 .background {
@@ -65,13 +74,14 @@ header ol {
 }
 
 .imgs-results img{
-  max-width: 30vw;
-  margin-top: 50px;
+  max-width: 25vw;
+  margin-top: 80px;
+  margin-left: 75px;
+  padding: 0 0;
 }
 
 .right-side-bar{
   margin:0;
-  margin-left: 10px;
   padding: 0;
   display: inline-block;
   justify-content: center;
@@ -108,7 +118,9 @@ header ol {
   font-size: 1.1rem;
   color: rgb(243, 242, 177);
   background-color: #6c36a1;
-  border-radius: 0.3em
+  border-radius: 0.3em;
+  width: 100px;
+  height: 55px;
 }
 
 .cover-choices {
@@ -120,7 +132,7 @@ header ol {
 
 .cover{
   width: 75px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding: 0 0;
   border: #ad80da;
   border-style: dotted;
@@ -129,27 +141,23 @@ header ol {
 
 .left-side-bar{
   margin:0;
-  margin-right: 10px;
+  margin-right: 20px;
   padding: 0;
   display: inline-block;
   justify-content: center;
+  align-items: center;
 }
 
 .score{
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-.score p{
   border: #ad80da;
   border-style: dotted;
+  background-color: #3d106b;
   color: aliceblue;
   font-size: 22px;
   font-weight: bold;
   text-align: center;
-  margin-right: 10px;
+  width: 90px;
+
 }
 
 .sprinkle-bottle {
@@ -157,8 +165,7 @@ header ol {
   justify-content: center;
   align-items: center;
   width: 90px;
-  align-items: center;
-  margin-bottom: 10px;
+  margin-top: 15px;
   border: #ad80da;
   border-style: dotted;
   color: aliceblue;
@@ -171,6 +178,6 @@ header ol {
   color: #5a0ca8;
   background-color: rgb(240, 236, 9);
   border-radius: 0.3em;
-  margin-right: 10px;
-  margin-bottom: 10px;
+  width: 90px;
+
 }

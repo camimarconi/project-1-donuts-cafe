@@ -2,9 +2,7 @@
 //spk bottles
 const sprinkleBottleBlueImg = document.querySelector(".sprinkle-bottle-blue");
 const sprinkleBottleWhiteImg = document.querySelector(".sprinkle-bottle-white");
-const sprinkleBottleYellowImg = document.querySelector(
-  ".sprinkle-bottle-yellow"
-);
+const sprinkleBottleYellowImg = document.querySelector(".sprinkle-bottle-yellow");
 const sprinkleBottlePinkImg = document.querySelector(".sprinkle-bottle-pink");
 
 //cover bottles
