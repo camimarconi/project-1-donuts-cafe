@@ -8,6 +8,8 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  max-width: 3000px;
+  max-height: 1000px;
 }
 
 header {
@@ -15,8 +17,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20vw;
-  position: relative;
+  width: 250px;
+  height: auto;
   margin: 0 25px 0 10px;
 }
 
@@ -157,7 +159,6 @@ header li{
   font-weight: bold;
   text-align: center;
   width: 90px;
-
 }
 
 .sprinkle-bottle {
@@ -179,5 +180,4 @@ header li{
   background-color: rgb(240, 236, 9);
   border-radius: 0.3em;
   width: 90px;
-
 }

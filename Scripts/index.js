@@ -2,7 +2,9 @@
 //spk bottles
 const sprinkleBottleBlueImg = document.querySelector(".sprinkle-bottle-blue");
 const sprinkleBottleWhiteImg = document.querySelector(".sprinkle-bottle-white");
-const sprinkleBottleYellowImg = document.querySelector(".sprinkle-bottle-yellow");
+const sprinkleBottleYellowImg = document.querySelector(
+  ".sprinkle-bottle-yellow"
+);
 const sprinkleBottlePinkImg = document.querySelector(".sprinkle-bottle-pink");
 
 //cover bottles
@@ -13,37 +15,69 @@ const btnCoverPinknBottle = document.querySelector(".cover-btn-pink");
 
 //no cover possobilities
 const donutBaseBlueSpk = document.querySelector(".donutBase-blue-spk");
-
 const donutBasePinkSpk = document.querySelector(".donutBase-pink-spk");
 const donutBaseWhiteSpk = document.querySelector(".donutBase-white-spk");
 const donutBaseYellowSpk = document.querySelector(".donutBase-yellow-spk");
+
 //green possibilities
 const coverGreenImg = document.querySelector(".donuts-green-cover");
-const coverGreenBlueSprinkleImg = document.querySelector(".donuts-green-blue-sprinkle");
-const coverGreenWhiteSprinkleImg = document.querySelector(".donuts-green-white-sprinkle");
-const coverGreenYellowSprinkleImg = document.querySelector(".donuts-green-yellow-sprinkle");
-const coverGreenPinkSprinkleImg = document.querySelector(".donuts-green-pink-sprinkle");
+const coverGreenBlueSprinkleImg = document.querySelector(
+  ".donuts-green-blue-sprinkle"
+);
+const coverGreenWhiteSprinkleImg = document.querySelector(
+  ".donuts-green-white-sprinkle"
+);
+const coverGreenYellowSprinkleImg = document.querySelector(
+  ".donuts-green-yellow-sprinkle"
+);
+const coverGreenPinkSprinkleImg = document.querySelector(
+  ".donuts-green-pink-sprinkle"
+);
 
 //brown possibilities
 const coverBrownImg = document.querySelector(".donuts-brown-cover");
-const coverBrownBlueSprinkleImg = document.querySelector(".donuts-brown-blue-sprinkle");
-const coverBrownWhiteSprinkleImg = document.querySelector(".donuts-brown-white-sprinkle");
-const coverBrownYellowSprinkleImg = document.querySelector(".donuts-brown-yellow-sprinkle");
-const coverBrownPinkSprinkleImg = document.querySelector(".donuts-brown-pink-sprinkle");
+const coverBrownBlueSprinkleImg = document.querySelector(
+  ".donuts-brown-blue-sprinkle"
+);
+const coverBrownWhiteSprinkleImg = document.querySelector(
+  ".donuts-brown-white-sprinkle"
+);
+const coverBrownYellowSprinkleImg = document.querySelector(
+  ".donuts-brown-yellow-sprinkle"
+);
+const coverBrownPinkSprinkleImg = document.querySelector(
+  ".donuts-brown-pink-sprinkle"
+);
 
 //violet possibilities
 const coverVioletImg = document.querySelector(".donuts-violet-cover");
-const coverVioletBlueSprinkleImg = document.querySelector(".donuts-violet-blue-sprinkle");
-const coverVioletWhiteSprinkleImg = document.querySelector(".donuts-violet-white-sprinkle");
-const coverVioletYellowSprinkleImg = document.querySelector(".donuts-violet-yellow-sprinkle");
-const coverVioletPinkSprinkleImg = document.querySelector(".donuts-violet-pink-sprinkle");
+const coverVioletBlueSprinkleImg = document.querySelector(
+  ".donuts-violet-blue-sprinkle"
+);
+const coverVioletWhiteSprinkleImg = document.querySelector(
+  ".donuts-violet-white-sprinkle"
+);
+const coverVioletYellowSprinkleImg = document.querySelector(
+  ".donuts-violet-yellow-sprinkle"
+);
+const coverVioletPinkSprinkleImg = document.querySelector(
+  ".donuts-violet-pink-sprinkle"
+);
 
 //pink possibilities
 const coverPinkImg = document.querySelector(".donuts-pink-cover");
-const coverPinkBlueSprinkleImg = document.querySelector(".donuts-pink-blue-sprinkle");
-const coverPinkWhiteSprinkleImg = document.querySelector(".donuts-pink-white-sprinkle");
-const coverPinkYellowSprinkleImg = document.querySelector(".donuts-pink-yellow-sprinkle");
-const coverPinkPinkSprinkleImg = document.querySelector(".donuts-pink-pink-sprinkle");
+const coverPinkBlueSprinkleImg = document.querySelector(
+  ".donuts-pink-blue-sprinkle"
+);
+const coverPinkWhiteSprinkleImg = document.querySelector(
+  ".donuts-pink-white-sprinkle"
+);
+const coverPinkYellowSprinkleImg = document.querySelector(
+  ".donuts-pink-yellow-sprinkle"
+);
+const coverPinkPinkSprinkleImg = document.querySelector(
+  ".donuts-pink-pink-sprinkle"
+);
 
 // btns
 const btnBaseDonut = document.querySelector(".btn-base-donut");
@@ -61,11 +95,12 @@ const gamepointsElement = document.querySelector(".points");
 const rightSymbol = document.querySelector(".right");
 const wrongSymbol = document.querySelector(".wrong");
 const winnerImg = document.querySelector(".winner");
+const timerElement = document.querySelector(".timer");
 
-const music = document.querySelector(".audio");
-music.play();
-music.loop = true;
-music.volume = 0.3;
+//const music = document.querySelector(".audio");
+//music.play();
+//music.loop = true;
+//music.volume = 0.2;
 
 let game = new Game();
 let user = new User();
@@ -132,14 +167,33 @@ function plusOneRound() {
 function winner() {
   hideDonuts();
   winnerImg.style.display = "block";
+  btnNewOrder.disabled = true;
+  btnDeliver.disabled = true;
+  btnBaseDonut.disabled = true;
+  sprinkleBottleBlueImg.disabled = true;
+  sprinkleBottleWhiteImg.disabled = true;
+  sprinkleBottleYellowImg.disabled = true;
+  sprinkleBottlePinkImg.disabled = true;
+  coverPinkImg.disabled = true;
+  coverBrownImg.disabled = true;
+  coverGreenImg.disabled = true;
+  coverVioletImg.disabled = true;
+}
 
-  //FECHAR PÁGINA PARA CLIQUE OU APARECER POP UP???
+function firstBase() {
+  if (baseDonut.style.display === "none") {
+    alert("You need a BASE DONUT to start!!!");
+    return;
+  }
+}
 
-  window.document.addEventListener('click', function (){
-    alert("Press 'New Game' to play again!!");
-    
-  });
+function timer() {
+  game.timer--;
+  updateTimer();
+}
 
+function updateTimer() {
+  timerElement.innerText = `${game.timer}`;
 }
 
 //event listerners
@@ -147,6 +201,16 @@ function winner() {
 btnNewOrder.addEventListener("click", function () {
   game.pickCardDonutsToMake();
   showCard();
+  timerElement.style.display = "block";
+
+  const intervalId = setInterval(() => {
+    timer();
+  }, 1000);
+
+  setTimeout(() => {
+    clearInterval(intervalId);
+    timerElement.style.display = "none";
+  }, 2000);
 });
 
 btnBaseDonut.addEventListener("click", function () {
@@ -155,6 +219,7 @@ btnBaseDonut.addEventListener("click", function () {
 });
 
 btnCoverGreenBottle.addEventListener("click", function () {
+  firstBase();
   hideDonuts();
   coverGreenImg.style.display = "block";
   user.userCover = "green";
@@ -162,6 +227,7 @@ btnCoverGreenBottle.addEventListener("click", function () {
 });
 
 btnCoverBrownnBottle.addEventListener("click", function () {
+  firstBase();
   hideDonuts();
   coverBrownImg.style.display = "block";
   user.userCover = "brown";
@@ -169,6 +235,7 @@ btnCoverBrownnBottle.addEventListener("click", function () {
 });
 
 btnCoverVioletnBottle.addEventListener("click", function () {
+  firstBase();
   hideDonuts();
   coverVioletImg.style.display = "block";
   user.userCover = "violet";
@@ -176,6 +243,7 @@ btnCoverVioletnBottle.addEventListener("click", function () {
 });
 
 btnCoverPinknBottle.addEventListener("click", function () {
+  firstBase();
   hideDonuts();
   coverPinkImg.style.display = "block";
   user.userCover = "pink";
