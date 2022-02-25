@@ -116,7 +116,6 @@ const optionsDonuts = [
   }
 ];
 
-
 class Game {
     constructor() {
       this.currentDonut = '';
@@ -125,15 +124,12 @@ class Game {
       this.baseDonut = false;
     };
 
-    //carta random para ter o donuts que precisa montar
     pickCardDonutsToMake() {
 
       let numRandom = Math.floor(Math.random() * optionsDonuts.length);
       
       this.currentDonut = optionsDonuts[numRandom];
     };
-
-
 };
 
 class User {

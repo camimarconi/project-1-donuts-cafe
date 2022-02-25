@@ -1,4 +1,3 @@
-// criar minhas constantes conectadas no html
 //spk bottles
 const sprinkleBottleBlueImg = document.querySelector(".sprinkle-bottle-blue");
 const sprinkleBottleWhiteImg = document.querySelector(".sprinkle-bottle-white");
@@ -63,23 +62,14 @@ const wrongSymbol = document.querySelector(".wrong");
 const winnerImg = document.querySelector(".winner");
 const timerElement = document.querySelector(".timer");
 
-//const music = document.querySelector(".audio");
-//music.play();
-//music.loop = true;
-//music.volume = 0.2;
+const music = document.querySelector(".audio");
+music.play();
+music.loop = true;
+music.volume = 0.2;
 
 let game = new Game();
 let user = new User();
 
-//EXEMPLO QUE DEU CERTO DE UM POR UM:
-// function userMakingDonut(clickOption) {
-//   user.userSelecting(clickOption);
-
-//   if(user.userCurrentSelection === 'blueSprinkleBottle'){
-//     baseDonut.style.display = 'none';
-//     donutBaseBlueSpk.style.display = 'block';
-//     return;
-//   };
 
 function hideDonuts() {
   document.querySelectorAll(".donuts").forEach((donut) => {
@@ -99,9 +89,6 @@ function checkDonutUserAndRandom() {
     hideDonuts();
     wrongSymbol.style.display = "block";
   }
-
-  // console.log(game);
-  // console.log(user);
 
   updateUserPoints();
 }
@@ -183,6 +170,7 @@ function timing() {
 //event listerners
 
 btnNewOrder.addEventListener("click", function () {
+  game.baseDonut = false;
   game.pickCardDonutsToMake();
   showCard();
   timerElement.style.display = "block";
@@ -246,7 +234,7 @@ btnCoverVioletBottle.addEventListener("click", function () {
 });
 
 btnCoverPinkBottle.addEventListener("click", function () {
-  if (baseDonut.style.display === 'none') {
+  if (game.baseDonut === false) {
     firstBase();
     hideDonuts();
   }
@@ -259,8 +247,6 @@ btnCoverPinkBottle.addEventListener("click", function () {
   }
 });
 
-//SPRINKLES POSSIBILITIES
-//BLUE SPRINLE POSSIBILITIES
 sprinkleBottleBlueImg.addEventListener("click", function () {
   if (
     baseDonut.style.display == "block" ||
@@ -323,7 +309,6 @@ sprinkleBottleBlueImg.addEventListener("click", function () {
   }
 });
 
-//WHITE SPRINKLE POSSIBILITIES
 sprinkleBottleWhiteImg.addEventListener("click", function () {
   if (
     baseDonut.style.display == "block" ||
@@ -386,7 +371,6 @@ sprinkleBottleWhiteImg.addEventListener("click", function () {
   }
 });
 
-//YELLOW SPRNKLE POSSIBILITIES
 sprinkleBottleYellowImg.addEventListener("click", function () {
   if (
     baseDonut.style.display == "block" ||
@@ -449,7 +433,6 @@ sprinkleBottleYellowImg.addEventListener("click", function () {
   }
 });
 
-//PINK SPRINKLE POSSIBILITIES
 sprinkleBottlePinkImg.addEventListener("click", function () {
   if (
     baseDonut.style.display == "block" ||
@@ -512,17 +495,11 @@ sprinkleBottlePinkImg.addEventListener("click", function () {
   }
 });
 
-// escuto um por um o click no botão - exemplo que deu certo - um por um
-// sprinkleBottleBlueImg.addEventListener('click', function() {
-//   userMakingDonut('sprinkleBottleBlueImg');
-//   // console.log('ola');
-// });
-
 btnDeliver.addEventListener("click", function () {
   checkDonutUserAndRandom();
   score();
 });
 
 btnNewGame.addEventListener("click", function () {
-  document.location.reload(true); // Recarrega a página atual sem usar o cache
+  document.location.reload(true);
 });
