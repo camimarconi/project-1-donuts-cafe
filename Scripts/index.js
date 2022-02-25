@@ -2,16 +2,14 @@
 //spk bottles
 const sprinkleBottleBlueImg = document.querySelector(".sprinkle-bottle-blue");
 const sprinkleBottleWhiteImg = document.querySelector(".sprinkle-bottle-white");
-const sprinkleBottleYellowImg = document.querySelector(
-  ".sprinkle-bottle-yellow"
-);
+const sprinkleBottleYellowImg = document.querySelector(".sprinkle-bottle-yellow");
 const sprinkleBottlePinkImg = document.querySelector(".sprinkle-bottle-pink");
 
 //cover bottles
 const btnCoverGreenBottle = document.querySelector(".cover-btn-green");
-const btnCoverBrownnBottle = document.querySelector(".cover-btn-brown");
-const btnCoverVioletnBottle = document.querySelector(".cover-btn-violet");
-const btnCoverPinknBottle = document.querySelector(".cover-btn-pink");
+const btnCoverBrownBottle = document.querySelector(".cover-btn-brown");
+const btnCoverVioletBottle = document.querySelector(".cover-btn-violet");
+const btnCoverPinkBottle = document.querySelector(".cover-btn-pink");
 
 //no cover possobilities
 const donutBaseBlueSpk = document.querySelector(".donutBase-blue-spk");
@@ -21,63 +19,31 @@ const donutBaseYellowSpk = document.querySelector(".donutBase-yellow-spk");
 
 //green possibilities
 const coverGreenImg = document.querySelector(".donuts-green-cover");
-const coverGreenBlueSprinkleImg = document.querySelector(
-  ".donuts-green-blue-sprinkle"
-);
-const coverGreenWhiteSprinkleImg = document.querySelector(
-  ".donuts-green-white-sprinkle"
-);
-const coverGreenYellowSprinkleImg = document.querySelector(
-  ".donuts-green-yellow-sprinkle"
-);
-const coverGreenPinkSprinkleImg = document.querySelector(
-  ".donuts-green-pink-sprinkle"
-);
+const coverGreenBlueSprinkleImg = document.querySelector(".donuts-green-blue-sprinkle");
+const coverGreenWhiteSprinkleImg = document.querySelector(".donuts-green-white-sprinkle");
+const coverGreenYellowSprinkleImg = document.querySelector(".donuts-green-yellow-sprinkle");
+const coverGreenPinkSprinkleImg = document.querySelector(".donuts-green-pink-sprinkle");
 
 //brown possibilities
 const coverBrownImg = document.querySelector(".donuts-brown-cover");
-const coverBrownBlueSprinkleImg = document.querySelector(
-  ".donuts-brown-blue-sprinkle"
-);
-const coverBrownWhiteSprinkleImg = document.querySelector(
-  ".donuts-brown-white-sprinkle"
-);
-const coverBrownYellowSprinkleImg = document.querySelector(
-  ".donuts-brown-yellow-sprinkle"
-);
-const coverBrownPinkSprinkleImg = document.querySelector(
-  ".donuts-brown-pink-sprinkle"
-);
+const coverBrownBlueSprinkleImg = document.querySelector(".donuts-brown-blue-sprinkle");
+const coverBrownWhiteSprinkleImg = document.querySelector(".donuts-brown-white-sprinkle");
+const coverBrownYellowSprinkleImg = document.querySelector(".donuts-brown-yellow-sprinkle");
+const coverBrownPinkSprinkleImg = document.querySelector(".donuts-brown-pink-sprinkle");
 
 //violet possibilities
 const coverVioletImg = document.querySelector(".donuts-violet-cover");
-const coverVioletBlueSprinkleImg = document.querySelector(
-  ".donuts-violet-blue-sprinkle"
-);
-const coverVioletWhiteSprinkleImg = document.querySelector(
-  ".donuts-violet-white-sprinkle"
-);
-const coverVioletYellowSprinkleImg = document.querySelector(
-  ".donuts-violet-yellow-sprinkle"
-);
-const coverVioletPinkSprinkleImg = document.querySelector(
-  ".donuts-violet-pink-sprinkle"
-);
+const coverVioletBlueSprinkleImg = document.querySelector(".donuts-violet-blue-sprinkle");
+const coverVioletWhiteSprinkleImg = document.querySelector(".donuts-violet-white-sprinkle");
+const coverVioletYellowSprinkleImg = document.querySelector(".donuts-violet-yellow-sprinkle");
+const coverVioletPinkSprinkleImg = document.querySelector(".donuts-violet-pink-sprinkle");
 
 //pink possibilities
 const coverPinkImg = document.querySelector(".donuts-pink-cover");
-const coverPinkBlueSprinkleImg = document.querySelector(
-  ".donuts-pink-blue-sprinkle"
-);
-const coverPinkWhiteSprinkleImg = document.querySelector(
-  ".donuts-pink-white-sprinkle"
-);
-const coverPinkYellowSprinkleImg = document.querySelector(
-  ".donuts-pink-yellow-sprinkle"
-);
-const coverPinkPinkSprinkleImg = document.querySelector(
-  ".donuts-pink-pink-sprinkle"
-);
+const coverPinkBlueSprinkleImg = document.querySelector(".donuts-pink-blue-sprinkle");
+const coverPinkWhiteSprinkleImg = document.querySelector(".donuts-pink-white-sprinkle");
+const coverPinkYellowSprinkleImg = document.querySelector(".donuts-pink-yellow-sprinkle");
+const coverPinkPinkSprinkleImg = document.querySelector(".donuts-pink-pink-sprinkle");
 
 // btns
 const btnBaseDonut = document.querySelector(".btn-base-donut");
@@ -156,9 +122,7 @@ function showCard() {
   }, 2000);
 }
 
-function plusOneRound() {
-  game.currentRound++;
-
+function score(){
   if (game.points === 2) {
     winner();
   }
@@ -167,6 +131,11 @@ function plusOneRound() {
 function winner() {
   hideDonuts();
   winnerImg.style.display = "block";
+  playAgain();
+}
+
+function playAgain(){
+  btnNewGame.classList.add("red");
   btnNewOrder.disabled = true;
   btnDeliver.disabled = true;
   btnBaseDonut.disabled = true;
@@ -174,17 +143,15 @@ function winner() {
   sprinkleBottleWhiteImg.disabled = true;
   sprinkleBottleYellowImg.disabled = true;
   sprinkleBottlePinkImg.disabled = true;
-  coverPinkImg.disabled = true;
-  coverBrownImg.disabled = true;
-  coverGreenImg.disabled = true;
-  coverVioletImg.disabled = true;
-}
+  btnCoverGreenBottle.disabled = true;
+  btnCoverBrownBottle.disabled = true;
+  btnCoverVioletBottle.disabled = true;
+  btnCoverPinkBottle.disabled = true;
+};
 
 function firstBase() {
-  if (baseDonut.style.display === "none") {
-    alert("You need a BASE DONUT to start!!!");
-    return;
-  }
+  alert("You need a BASE DONUT to start!!!");
+  btnBaseDonut.classList.add("red");
 }
 
 function timer() {
@@ -196,13 +163,13 @@ function updateTimer() {
   timerElement.innerText = `${game.timer}`;
 }
 
-//event listerners
+function resetTimer() {
+  game.timer = 2;
+  updateTimer();
+}
 
-btnNewOrder.addEventListener("click", function () {
-  game.pickCardDonutsToMake();
-  showCard();
-  timerElement.style.display = "block";
-
+function timing() {
+  resetTimer();
   const intervalId = setInterval(() => {
     timer();
   }, 1000);
@@ -211,43 +178,85 @@ btnNewOrder.addEventListener("click", function () {
     clearInterval(intervalId);
     timerElement.style.display = "none";
   }, 2000);
+}
+
+//event listerners
+
+btnNewOrder.addEventListener("click", function () {
+  game.pickCardDonutsToMake();
+  showCard();
+  timerElement.style.display = "block";
+  timing();
 });
 
 btnBaseDonut.addEventListener("click", function () {
+  btnBaseDonut.classList.remove("red");
   hideDonuts();
   baseDonut.style.display = "block";
+  game.baseDonut = true;
 });
 
 btnCoverGreenBottle.addEventListener("click", function () {
-  firstBase();
-  hideDonuts();
-  coverGreenImg.style.display = "block";
-  user.userCover = "green";
-  user.userSprinkle = "none";
+  if (game.baseDonut === false) {
+    firstBase();
+    hideDonuts();
+  }
+
+  if (game.baseDonut === true) {
+    hideDonuts();
+    coverGreenImg.style.display = "block";
+    user.userCover = "green";
+    user.userSprinkle = "none";
+  }
+
 });
 
-btnCoverBrownnBottle.addEventListener("click", function () {
-  firstBase();
-  hideDonuts();
-  coverBrownImg.style.display = "block";
-  user.userCover = "brown";
-  user.userSprinkle = "none";
+btnCoverBrownBottle.addEventListener("click", function () {
+  if (game.baseDonut === false) {
+    firstBase();
+    hideDonuts();
+  }
+
+  if (game.currentDonut === true) {
+    firstBase();
+    hideDonuts();
+  }
+
+  if (game.baseDonut === true) {
+    hideDonuts();
+    coverBrownImg.style.display = "block";
+    user.userCover = "brown";
+    user.userSprinkle = "none";
+  }
 });
 
-btnCoverVioletnBottle.addEventListener("click", function () {
-  firstBase();
-  hideDonuts();
-  coverVioletImg.style.display = "block";
-  user.userCover = "violet";
-  user.userSprinkle = "none";
+btnCoverVioletBottle.addEventListener("click", function () {
+  if (game.baseDonut === false) {
+    firstBase();
+    hideDonuts();
+  }
+
+  if (game.baseDonut === true) {
+    hideDonuts();
+    coverVioletImg.style.display = "block";
+    user.userCover = "violet";
+    user.userSprinkle = "none";
+  }
+
 });
 
-btnCoverPinknBottle.addEventListener("click", function () {
-  firstBase();
-  hideDonuts();
-  coverPinkImg.style.display = "block";
-  user.userCover = "pink";
-  user.userSprinkle = "none";
+btnCoverPinkBottle.addEventListener("click", function () {
+  if (baseDonut.style.display === 'none') {
+    firstBase();
+    hideDonuts();
+  }
+
+  if (game.baseDonut === true) {
+    hideDonuts();
+    coverPinkImg.style.display = "block";
+    user.userCover = "pink";
+    user.userSprinkle = "none";
+  }
 });
 
 //SPRINKLES POSSIBILITIES
@@ -263,7 +272,6 @@ sprinkleBottleBlueImg.addEventListener("click", function () {
     donutBaseBlueSpk.style.display = "block";
     user.userCover = "none";
     user.userSprinkle = "blue";
-    console.log("olaaaaa");
   }
 
   if (
@@ -512,7 +520,7 @@ sprinkleBottlePinkImg.addEventListener("click", function () {
 
 btnDeliver.addEventListener("click", function () {
   checkDonutUserAndRandom();
-  plusOneRound();
+  score();
 });
 
 btnNewGame.addEventListener("click", function () {

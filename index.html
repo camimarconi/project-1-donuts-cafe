@@ -6,28 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300;700&family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:wght@300;700&family=Shizuru&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Shizuru&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&family=Shizuru&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Donuts Cafe</title>
     <link rel="stylesheet" href="./Styles/style.css" />
-    <audio class="audio" src="./Images/bensound-theelevatorbossanova.mp3"></audio>
+    <audio
+      class="audio"
+      src="./Images/bensound-theelevatorbossanova.mp3"
+    ></audio>
   </head>
 
   <body>
-
-    <header>
+    <div class="container">
+      <header>
         <h1>Donuts Cafe</h1>
         <p>Welcome to Donuts Cafe!</p>
-        <p> Are you ready to make some donuts?</p>
+        <p>Are you ready to make some donuts?</p>
         <ol>
           <li>Press 'New Order'.</li>
-          <li class="memorize">The customer's order will appear for only 2 seconds.</li>
+          <li class="memorize">
+            The customer's order will appear for only 2 seconds.
+          </li>
           <li class="memorize">Memorize the donut you need to make!</li>
           <li>Press 'Donut Base'.</li>
           <li>Choose your cover and sprinkle choices.</li>
@@ -35,187 +46,315 @@
           <li>Repeat process .-.</li>
         </ol>
         <p>If you get to 05 correct orders, you win!</p>
+      </header>
 
-
-    </header>
-  
       <main class="background">
+        <div class="right-side-bar">
+          <ul class="btns-order-base-deliver">
+            <li><button class="new-order-btn">New Order</button></li>
+            <li><button class="btn-base-donut">Donut Base</button></li>
+            <li><button class="deliver-btn">Deliver to custumer</button></li>
 
-          <div class="right-side-bar">
+            <div class="cover-choices">
+              <input
+                type="image"
+                class="cover-btn-brown cover topping"
+                src="./Images/cover-brown.png"
+                alt="brown-cover-button"
+              />
+              <input
+                type="image"
+                class="cover-btn-pink cover topping"
+                src="./Images/cover-pink.png"
+                alt="pink-cover-button"
+              />
+              <input
+                type="image"
+                class="cover-btn-green cover topping"
+                src="./Images/cover-green.png"
+                alt="green-cover-button"
+              />
+              <input
+                type="image"
+                class="cover-btn-violet cover topping"
+                src="./Images/cover-violet.png"
+                alt="violet-cover-button"
+              />
+            </div>
+          </ul>
+        </div>
 
-            <ul class="btns-order-base-deliver">
-              <li><button class="new-order-btn">New Order</button></li>
-              <li><button class="btn-base-donut">Donut Base</button></li>
-              <li><button class="deliver-btn">Deliver to custumer</button></li>
-
-              <div class="cover-choices">
-                <img class="cover-btn-brown cover topping" src="./Images/cover-brown.png" alt="brown-cover-button"/>
-                <img class="cover-btn-pink cover topping" src="./Images/cover-pink.png" alt="pink-cover-button"/>
-                <img class="cover-btn-green cover topping" src="./Images/cover-green.png" alt="green-cover-button"/>
-                <img class="cover-btn-violet cover topping" src="./Images/cover-violet.png" alt="violet-cover-button"/>
-              </div>
-
-            </ul>
-          </div>
-
-
-        
         <div>
           <section>
             <p class="timer donuts">2</p>
           </section>
 
           <section>
-            <img class="donutBase donuts" src="./Images/donuts-base.png" alt="donuts-base"/>
+            <img
+              class="donutBase donuts"
+              src="./Images/donuts-base.png"
+              alt="donuts-base"
+            />
           </section>
 
           <section>
-            <img class="donutBase-blue-spk donuts" src="./Images/donuts-base-blue-sprinkle.png" alt="donuts-base-blue-sprinkle"/>
+            <img
+              class="donutBase-blue-spk donuts"
+              src="./Images/donuts-base-blue-sprinkle.png"
+              alt="donuts-base-blue-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donutBase-pink-spk donuts" src="./Images/donuts-base-pink-sprinkle.png" alt="donuts-base-pink-sprinkle"/>
+            <img
+              class="donutBase-pink-spk donuts"
+              src="./Images/donuts-base-pink-sprinkle.png"
+              alt="donuts-base-pink-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donutBase-white-spk donuts" src="./Images/donuts-base-white-sprinkle.png" alt="donuts-base-white-sprinkle"/>
+            <img
+              class="donutBase-white-spk donuts"
+              src="./Images/donuts-base-white-sprinkle.png"
+              alt="donuts-base-white-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donutBase-yellow-spk donuts" src="./Images/donuts-base-yellow-sprinkle.png" alt="donuts-base-yellow-sprinkle"/>
+            <img
+              class="donutBase-yellow-spk donuts"
+              src="./Images/donuts-base-yellow-sprinkle.png"
+              alt="donuts-base-yellow-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-brown-cover donuts" src="./Images/donuts-brown-cover.png" alt="donuts-brown-cover"/>
+            <img
+              class="donuts-brown-cover donuts"
+              src="./Images/donuts-brown-cover.png"
+              alt="donuts-brown-cover"
+            />
           </section>
 
           <section>
-            <img class="donuts-brown-blue-sprinkle donuts" src="./Images/donuts-brown-blue-sprinkle.png" alt="donuts-brown-blue-sprinkle"/>
+            <img
+              class="donuts-brown-blue-sprinkle donuts"
+              src="./Images/donuts-brown-blue-sprinkle.png"
+              alt="donuts-brown-blue-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-brown-pink-sprinkle donuts" src="./Images/donuts-brown-pink-sprinkle.png" alt="donuts-brown-pink-sprinkle"/>
+            <img
+              class="donuts-brown-pink-sprinkle donuts"
+              src="./Images/donuts-brown-pink-sprinkle.png"
+              alt="donuts-brown-pink-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-brown-white-sprinkle donuts" src="./Images/donuts-brown-white-sprinkle.png" alt="donuts-brown-white-sprinkle"/>
+            <img
+              class="donuts-brown-white-sprinkle donuts"
+              src="./Images/donuts-brown-white-sprinkle.png"
+              alt="donuts-brown-white-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-brown-yellow-sprinkle donuts" src="./Images/donuts-brown-yellow-sprinkle.png" alt="donuts-brown-yellow-sprinkle"/>
+            <img
+              class="donuts-brown-yellow-sprinkle donuts"
+              src="./Images/donuts-brown-yellow-sprinkle.png"
+              alt="donuts-brown-yellow-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-green-cover donuts" src="./Images/donuts-green-cover.png" alt="donuts-green-cover"/>
+            <img
+              class="donuts-green-cover donuts"
+              src="./Images/donuts-green-cover.png"
+              alt="donuts-green-cover"
+            />
           </section>
 
           <section>
-            <img class="donuts-green-blue-sprinkle donuts" src="./Images/donuts-green-blue-sprinkle.png" alt="donuts-green-blue-sprinkle"/>
+            <img
+              class="donuts-green-blue-sprinkle donuts"
+              src="./Images/donuts-green-blue-sprinkle.png"
+              alt="donuts-green-blue-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-green-pink-sprinkle donuts" src="./Images/donuts-green-pink-sprinkle.png" alt="donuts-green-pink-sprinkle"/>
+            <img
+              class="donuts-green-pink-sprinkle donuts"
+              src="./Images/donuts-green-pink-sprinkle.png"
+              alt="donuts-green-pink-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-green-white-sprinkle donuts" src="./Images/donuts-green-white-sprinkle.png" alt="donuts-green-white-sprinkle"/>
+            <img
+              class="donuts-green-white-sprinkle donuts"
+              src="./Images/donuts-green-white-sprinkle.png"
+              alt="donuts-green-white-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-green-yellow-sprinkle donuts" src="./Images/donuts-green-yellow-sprinkle.png" alt="donuts-green-yellow-sprinkle"/>
+            <img
+              class="donuts-green-yellow-sprinkle donuts"
+              src="./Images/donuts-green-yellow-sprinkle.png"
+              alt="donuts-green-yellow-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-violet-cover donuts" src="./Images/donuts-violet-cover.png" alt="donuts-violet-cover"/>
+            <img
+              class="donuts-violet-cover donuts"
+              src="./Images/donuts-violet-cover.png"
+              alt="donuts-violet-cover"
+            />
           </section>
 
           <section>
-            <img class="donuts-violet-blue-sprinkle donuts" src="./Images/donuts-violet-blue-sprinkle.png" alt="donuts-violet-blue-sprinkle"/>
+            <img
+              class="donuts-violet-blue-sprinkle donuts"
+              src="./Images/donuts-violet-blue-sprinkle.png"
+              alt="donuts-violet-blue-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-violet-pink-sprinkle donuts" src="./Images/donuts-violet-pink-sprinkle.png" alt="donuts-violet-pink-sprinkle"/>
+            <img
+              class="donuts-violet-pink-sprinkle donuts"
+              src="./Images/donuts-violet-pink-sprinkle.png"
+              alt="donuts-violet-pink-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-violet-white-sprinkle donuts" src="./Images/donuts-violet-white-sprinkle.png" alt="donuts-violet-white-sprinkle"/>
+            <img
+              class="donuts-violet-white-sprinkle donuts"
+              src="./Images/donuts-violet-white-sprinkle.png"
+              alt="donuts-violet-white-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-violet-yellow-sprinkle donuts" src="./Images/donuts-violet-yellow-sprinkle.png" alt="donuts-violet-yellow-sprinkle"/>
+            <img
+              class="donuts-violet-yellow-sprinkle donuts"
+              src="./Images/donuts-violet-yellow-sprinkle.png"
+              alt="donuts-violet-yellow-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-pink-cover donuts" src="./Images/donuts-pink-cover.png" alt="donuts-pink-cover"/>
+            <img
+              class="donuts-pink-cover donuts"
+              src="./Images/donuts-pink-cover.png"
+              alt="donuts-pink-cover"
+            />
           </section>
 
           <section>
-            <img class="donuts-pink-blue-sprinkle donuts" src="./Images/donuts-pink-blue-sprinkle.png" alt="donuts-pink-blue-sprinkle"/>
+            <img
+              class="donuts-pink-blue-sprinkle donuts"
+              src="./Images/donuts-pink-blue-sprinkle.png"
+              alt="donuts-pink-blue-sprinkle"
+            />
           </section>
 
           <section>
-            <img class="donuts-pink-white-sprinkle donuts" src="./Images/donuts-pink-white-sprinkle.png" alt="donuts-pink-white-sprinkle"/>
+            <img
+              class="donuts-pink-white-sprinkle donuts"
+              src="./Images/donuts-pink-white-sprinkle.png"
+              alt="donuts-pink-white-sprinkle"
+            />
           </section>
-  
+
           <section>
-            <img class="donuts-pink-yellow-sprinkle donuts" src="./Images/donuts-pink-yellow-sprinkle.png" alt="donuts-pink-yellow-sprinkle"/>
+            <img
+              class="donuts-pink-yellow-sprinkle donuts"
+              src="./Images/donuts-pink-yellow-sprinkle.png"
+              alt="donuts-pink-yellow-sprinkle"
+            />
           </section>
-  
+
           <section>
-            <img class="donuts-pink-pink-sprinkle donuts" src="./Images/donuts-pink-pink-sprinkle.png" alt="donuts-pink-pink-sprinkle"/>
+            <img
+              class="donuts-pink-pink-sprinkle donuts"
+              src="./Images/donuts-pink-pink-sprinkle.png"
+              alt="donuts-pink-pink-sprinkle"
+            />
           </section>
 
           <div class="imgs-results">
-
             <section>
-              <img class="right donuts" src="./Images/right 2.png" alt="got-right-girl"/>
-            </section>
-    
-            <section>
-              <img class="wrong donuts" src="./Images/wrong 7.png" alt="got-wrong-girl"/>
-            </section>
-    
-            <section>
-              <img class="winner donuts" src="./Images/win 2.png" alt="winner-img-girl"/>
+              <img
+                class="right donuts"
+                src="./Images/right 2.png"
+                alt="got-right-girl"
+              />
             </section>
 
+            <section>
+              <img
+                class="wrong donuts"
+                src="./Images/wrong 7.png"
+                alt="got-wrong-girl"
+              />
+            </section>
+
+            <section>
+              <img
+                class="winner donuts"
+                src="./Images/win 2.png"
+                alt="winner-img-girl"
+              />
+            </section>
           </div>
-
         </div>
 
         <div class="left-side-bar">
           <p class="score">Score</p>
           <p class="points score">0</p>
-          
+
           <section>
-          <button class="new-game-btn">New Game!</button>
+            <button class="new-game-btn">Play Again!</button>
           </section>
 
           <div class="sprinkles-choices">
-            <section>
-              <img class="sprinkle-bottle-blue sprinkle-bottle topping" src="./Images/blue spk.png" alt="blue-sprinkle-bottle"/>
-            </section>
-    
-            <section>
-              <img class="sprinkle-bottle-pink sprinkle-bottle topping" src="./Images/pink spk.png" alt="pink-sprinkle-bottle"/>
-            </section>
-    
-            <section>
-               <img class="sprinkle-bottle-white sprinkle-bottle topping" src="./Images/white spk.png" alt="white-sprinkle-bottle"/>
-            </section>
-    
-            <section>
-              <img class="sprinkle-bottle-yellow sprinkle-bottle topping" src="./Images/yellow spk.png" alt="yellow-sprinkle-bottle"/>
-            </section>
-    
-          </div>            
-          
+            <input
+              type="image"
+              class="sprinkle-bottle-blue sprinkle-bottle topping"
+              src="./Images/blue spk.png"
+              alt="blue-sprinkle-bottle"
+            />
+            <input
+              type="image"
+              class="sprinkle-bottle-pink sprinkle-bottle topping"
+              src="./Images/pink spk.png"
+              alt="pink-sprinkle-bottle"
+            />
+            <input
+              type="image"
+              class="sprinkle-bottle-white sprinkle-bottle topping"
+              src="./Images/white spk.png"
+              alt="white-sprinkle-bottle"
+            />
+            <input
+              type="image"
+              class="sprinkle-bottle-yellow sprinkle-bottle topping"
+              src="./Images/yellow spk.png"
+              alt="yellow-sprinkle-bottle"
+            />
+          </div>
         </div>
-        
       </main>
+    </div>
 
     <script type="text/javascript" src="./Scripts/game.js"></script>
     <script type="text/javascript" src="./Scripts/index.js"></script>
-
   </body>
 </html>

@@ -7,6 +7,9 @@ body {
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
+}
+
+.container{
   display: flex;
   max-width: 3000px;
   max-height: 1000px;
@@ -24,7 +27,7 @@ header {
 
 header h1 {
   font-family: 'Shizuru', cursive;
-  font-size: 45px;
+  font-size: 35px;
   background: -webkit-linear-gradient(#fff, blueviolet);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -32,20 +35,20 @@ header h1 {
 }
 
 header p {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   text-align: center;
   color: #6D3E9B;
 }
 
 header ol {
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
   color: #49484A;
 }
 
 header li{
-  padding-top: 25px;
+  padding-top: 15px;
   padding-left: 10px;
 }
 
@@ -87,6 +90,7 @@ header li{
   padding: 0;
   display: inline-block;
   justify-content: center;
+  height: fit-content;
 }
 
 .btns-order-base-deliver li{
@@ -133,7 +137,7 @@ header li{
 }
 
 .cover{
-  width: 75px;
+  width: 63px;
   margin-bottom: 10px;
   padding: 0 0;
   border: #ad80da;
@@ -148,6 +152,7 @@ header li{
   display: inline-block;
   justify-content: center;
   align-items: center;
+  height: fit-content;
 }
 
 .score{
@@ -165,7 +170,7 @@ header li{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90px;
+  width: 73px;
   margin-top: 15px;
   border: #ad80da;
   border-style: dotted;
@@ -180,4 +185,9 @@ header li{
   background-color: rgb(240, 236, 9);
   border-radius: 0.3em;
   width: 90px;
+}
+
+.red {
+  background-color: red;
+  color: black;
 }

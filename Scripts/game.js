@@ -121,8 +121,8 @@ class Game {
     constructor() {
       this.currentDonut = '';
       this.points = 0;
-      this.currentRound = 0;
       this.timer = 2;
+      this.baseDonut = false;
     };
 
     //carta random para ter o donuts que precisa montar
