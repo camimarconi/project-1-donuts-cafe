@@ -110,7 +110,7 @@ function showCard() {
 }
 
 function score(){
-  if (game.points === 2) {
+  if (game.points === 5) {
     winner();
   }
 }

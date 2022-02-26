@@ -154,6 +154,7 @@ header li{
   border: #ad80da;
   border-style: dotted;
   color: aliceblue;
+  width: 5vw;
 }
 
 .right-side-bar{
@@ -173,6 +174,7 @@ header li{
   text-align: center;
   width: 5vw;
   height: auto;
+  margin-left: 0.5vw;
 }
 
 .sprinkle-bottle {
@@ -184,7 +186,7 @@ header li{
   border: #ad80da;
   border-style: dotted;
   color: aliceblue;
-  width: 5.3vw;
+  width: 6vw;
 }
 
 .new-game-btn{
@@ -195,8 +197,7 @@ header li{
   background-color: rgb(240, 236, 9);
   border-radius: 0.3em;
   width: 5vw;
-  margin-bottom: 0.5vw;
-  margin-top: 0.5vh;
+  margin: 1vh 0 1vw 0.5vw;
 }
 
 .red {
